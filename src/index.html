@@ -5,12 +5,249 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/dist/output.css" rel="stylesheet">
+
+        <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
     </head>
 
     <body>
-        <h1 class="text-3xl font-bold underline">
-            Hello world!
-        </h1>
+        <header class="py-8 px-20 shadow-md">
+            <div class="flex items-center justify-between container mx-auto">
+
+                <div>
+                    <img src="/dist/images/logo.svg" alt="Carifex" width="150px">
+                </div>
+
+                <nav class="flex items-center space-x-7">
+                    <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">Home
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+
+                                    this.$refs.button.focus()
+
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+
+                                    this.open = false
+
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']" class="relative">
+                            <!-- Button -->
+                            <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
+                                :aria-controls="$id('dropdown-button')" type="button"
+                                class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
+                                Shop
+
+                                <!-- Heroicon: chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <!-- Panel -->
+                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')" style="display: none;"
+                                class="absolute left-0 mt-2 w-max rounded-md bg-white shadow-md uppercase py-3 border">
+                                <p
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 hover:bg-gray-50 disabled:text-gray-500 border-b">
+                                    Led Headlights
+                                </p>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Bulb Style
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                    Vehcile Make, Year, Model
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                    Sealed Beams
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                        Blog
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+
+                                    this.$refs.button.focus()
+
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+
+                                    this.open = false
+
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']" class="relative">
+                            <!-- Button -->
+                            <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
+                                :aria-controls="$id('dropdown-button')" type="button"
+                                class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
+                                Contact Us
+
+                                <!-- Heroicon: chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <!-- Panel -->
+                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')" style="display: none;"
+                                class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-md uppercase py-3 border">
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    Faq's
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                    Shipping
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                    Installation
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                    Return Policy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input class="border py-3 px-6 rounded-lg border-[#BABCC4] w-60" type="text"
+                            name="" placeholder="Search">
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+
+                                    this.$refs.button.focus()
+
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+
+                                    this.open = false
+
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                            x-id="['dropdown-button']" class="relative">
+                            <!-- Button -->
+
+                            <div class="relative">
+                                <span
+                                    class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full text-center text-white px-1">1</span>
+
+                                <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
+                                    :aria-controls="$id('dropdown-button')" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Panel -->
+                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                x-on:click.outside="close($refs.button)"
+                                :id="$id('dropdown-button')" style="display: none;"
+                                class="absolute -left-60 mt-10 w-max rounded-md bg-white shadow-md p-3 border font-semibold">
+
+                                <div>
+                                    <div
+                                        class="flex items-center space-x-3 border-b border-[#BABCC4] py-6">
+                                        <img src="/dist/images/Rectangle 679.svg" alt="">
+
+                                        <div>
+                                            <h1>Compact LED Headlight Bulbs</h1>
+                                            <p>1 x $69.99</p>
+                                        </div>
+
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                                                viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                    <div class="flex flex-col text-lg py-6 space-y-5">
+                                        <div class="flex justify-between">
+                                            <h1>Subtotal:</h1>
+                                            <h1>$69.99</h1>
+                                        </div>
+
+                                        <div class="text-sm text-center space-x-3">
+                                            <button
+                                                class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">View
+                                                Cart</button>
+                                            <button
+                                                class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">Checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
     </body>
 
 </html>
