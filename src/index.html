@@ -43,13 +43,12 @@
                             }" x-on:keydown.escape.prevent.stop="close($refs.button)"
                             x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
                             x-id="['dropdown-button']" class="relative">
-                            <!-- Button -->
+
                             <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                                 :aria-controls="$id('dropdown-button')" type="button"
                                 class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
                                 Shop
 
-                                <!-- Heroicon: chevron-down -->
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
                                     fill="currentColor">
@@ -59,7 +58,6 @@
                                 </svg>
                             </button>
 
-                            <!-- Panel -->
                             <div x-ref="panel" x-show="open" x-transition.origin.top.left
                                 x-on:click.outside="close($refs.button)"
                                 :id="$id('dropdown-button')" style="display: none;"
@@ -113,13 +111,12 @@
                             }" x-on:keydown.escape.prevent.stop="close($refs.button)"
                             x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
                             x-id="['dropdown-button']" class="relative">
-                            <!-- Button -->
+
                             <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                                 :aria-controls="$id('dropdown-button')" type="button"
                                 class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
                                 Contact Us
 
-                                <!-- Heroicon: chevron-down -->
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
                                     fill="currentColor">
@@ -129,7 +126,6 @@
                                 </svg>
                             </button>
 
-                            <!-- Panel -->
                             <div x-ref="panel" x-show="open" x-transition.origin.top.left
                                 x-on:click.outside="close($refs.button)"
                                 :id="$id('dropdown-button')" style="display: none;"
@@ -184,7 +180,6 @@
                             }" x-on:keydown.escape.prevent.stop="close($refs.button)"
                             x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
                             x-id="['dropdown-button']" class="relative">
-                            <!-- Button -->
 
                             <div class="relative">
                                 <span
@@ -201,7 +196,6 @@
                                 </button>
                             </div>
 
-                            <!-- Panel -->
                             <div x-ref="panel" x-show="open" x-transition.origin.top.left
                                 x-on:click.outside="close($refs.button)"
                                 :id="$id('dropdown-button')" style="display: none;"
@@ -250,8 +244,9 @@
         </header>
 
 
-        <footer class="w-full bg-[#292929] text-white bottom-0 absolute">
-            <div class="flex container mx-auto justify-between py-10 border-b">
+        <footer class="w-full bg-[#292929] text-white bottom-0 md:absolute">
+            <div
+                class="flex flex-col md:flex-row container mx-auto items-center md:items-start text-center md:text-left md:justify-between py-10 border-b space-y-6 md:space-y-0">
                 <div class="space-y-5 max-w-[250px]">
                     <h1 class="uppercase text-3xl font-bold">Carifex</h1>
 
@@ -320,10 +315,11 @@
 
                     <ul class="text-sm space-y-4">
                         <li>Get updates on our products that you might be interested in .</li>
-                        <li><input type="email" name="" placeholder="Your email" class="py-2 w-full bg-inherit border-b outline-none"></li>
+                        <li><input type="email" name="" placeholder="Your email"
+                                class="py-2 w-full bg-inherit border-b outline-none"></li>
                         <li><button class="bg-white text-black w-full py-3 text-sm">
-                            Subscribe
-                        </button></li>
+                                Subscribe
+                            </button></li>
                     </ul>
                 </div>
             </div>
