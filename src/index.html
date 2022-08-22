@@ -11,91 +11,187 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
             rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+
         <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js">
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var splide = new Splide('#splide1', {
+                    type: 'loop',
+                    padding: '5rem',
+                    gap: '1.5rem',
+                    rewind: true,
+                    perPage: 4,
+                    perMove: 1,
+                    drag: 'free',
+
+                    breakpoints: {
+                        640: {
+                            perPage: 1.15,
+                            padding: '1rem',
+                        },
+                        768: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                        1024: {
+                            perPage: 3,
+                            padding: '3rem',
+                        },
+                    },
+                }).mount();
+
+                var splide = new Splide('#splide2', {
+                    type: 'loop',
+                    padding: '5rem',
+                    gap: '1.5rem',
+                    rewind: true,
+                    perPage: 2,
+                    perMove: 1,
+                    drag: 'free',
+
+                    breakpoints: {
+                        640: {
+                            perPage: 1.15,
+                            padding: '.1rem',
+                            perPage: 1,
+                        },
+                        768: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                        1024: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                    },
+                }).mount();
+
+                var splide = new Splide('#splide3', {
+                    type: 'loop',
+                    padding: '2rem',
+                    gap: '.5rem',
+                    rewind: true,
+                    perPage: 3,
+                    perMove: 1,
+                    drag: 'free',
+
+                    breakpoints: {
+                        640: {
+                            perPage: 1,
+                            padding: '.1rem',
+                            perPage: 1,
+                        },
+                        768: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                        1024: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                    },
+                }).mount();
+
+                var splide = new Splide('#splide4', {
+                    type: 'loop',
+                    padding: '2rem',
+                    gap: '.5rem',
+                    rewind: true,
+                    perPage: 3,
+                    perMove: 1,
+                    drag: 'free',
+
+                    breakpoints: {
+                        640: {
+                            perPage: 1,
+                            padding: '.1rem',
+                            perPage: 1,
+                        },
+                        768: {
+                            perPage: 2,
+                            autoWidth: true,
+                            padding: '3rem',
+                        },
+                        1024: {
+                            perPage: 2,
+                            padding: '3rem',
+                        },
+                    },
+                }).mount();
+
+                // splide.mount();
+            });
+        </script>
     </head>
 
     <body>
-        <header class="py-8 px-20 shadow-md">
-            <div class="flex items-center justify-between container mx-auto">
+        <header x-data="{ isOpen: false }" class="py-8 px-6 md:px-20 shadow-md">
+            <div class="flex flex-col md:flex-row items-center justify-between container mx-auto">
+                <div class="flex items-center justify-between w-full md:w-fit">
+                    <div>
+                        <img src="/dist/images/logo.svg" alt="Carifex" width="150px">
+                    </div>
 
-                <div>
-                    <img src="/dist/images/logo.svg" alt="Carifex" width="150px">
+                    <div class="relative z-40 flex gap-x-2 items-center md:hidden">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" />
+                            </svg>
+                        </button>
+
+                        <div class="flex relative items-center">
+                            <span
+                                class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full text-center text-white px-1">1</span>
+
+                            <button x-ref="button" x-on:click="toggle()"
+                                :aria-controls="$id('dropdown-button')" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <button x-on:click="isOpen = !isOpen">
+                            <span x-show="!isOpen">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" /></svg>
+                            </span>
+
+                            <span x-show="isOpen">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
                 </div>
 
-                <nav class="flex items-center space-x-7">
-                    <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">Home
-                    </div>
-
-                    <div class="flex justify-center">
-                        <div x-data="{
-                                open: false,
-                                toggle() {
-                                    if (this.open) {
-                                        return this.close()
-                                    }
-
-                                    this.$refs.button.focus()
-
-                                    this.open = true
-                                },
-                                close(focusAfter) {
-                                    if (! this.open) return
-
-                                    this.open = false
-
-                                    focusAfter && focusAfter.focus()
-                                }
-                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
-                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                            x-id="['dropdown-button']" class="relative">
-
-                            <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
-                                :aria-controls="$id('dropdown-button')" type="button"
-                                class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
-                                Shop
-
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-
-                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
-                                x-on:click.outside="close($refs.button)"
-                                :id="$id('dropdown-button')" style="display: none;"
-                                class="absolute left-0 mt-2 w-max rounded-md bg-white shadow-md uppercase py-3 border">
-                                <p
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 hover:bg-gray-50 disabled:text-gray-500 border-b">
-                                    Led Headlights
-                                </p>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
-                                    Bulb Style
-                                </a>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
-                                    Vehcile Make, Year, Model
-                                </a>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
-                                    Sealed Beams
-                                </a>
-                            </div>
+                <div class="w-full md:w-auto" :class="{'mt-10': isOpen}">
+                    <nav class="md:flex md:items-center md:space-x-7 flex-col md:flex-row w-full"
+                        :class="{ 'flex shadow-3xl': isOpen, 'hidden': !isOpen }"
+                        x-show.transition="true">
+                        <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                            Home
                         </div>
-                    </div>
 
-                    <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
-                        Blog
-                    </div>
-
-                    <div class="flex justify-center">
-                        <div x-data="{
+                        <div class="flex justify-start md:justify-center">
+                            <div x-data="{
                                 open: false,
                                 toggle() {
                                     if (this.open) {
@@ -114,355 +210,449 @@
                                     focusAfter && focusAfter.focus()
                                 }
                             }" x-on:keydown.escape.prevent.stop="close($refs.button)"
-                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                            x-id="['dropdown-button']" class="relative">
-
-                            <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
-                                :aria-controls="$id('dropdown-button')" type="button"
-                                class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
-                                Contact Us
-
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-
-                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
-                                x-on:click.outside="close($refs.button)"
-                                :id="$id('dropdown-button')" style="display: none;"
-                                class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-md uppercase py-3 border">
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
-                                    Faq's
-                                </a>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
-                                    Shipping
-                                </a>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
-                                    Installation
-                                </a>
-
-                                <a href="#"
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
-                                    Return Policy
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <input class="border py-3 px-6 rounded-lg border-[#BABCC4] w-60" type="text"
-                            name="" placeholder="Search">
-                    </div>
-
-                    <div class="flex justify-center">
-                        <div x-data="{
-                                open: false,
-                                toggle() {
-                                    if (this.open) {
-                                        return this.close()
-                                    }
-
-                                    this.$refs.button.focus()
-
-                                    this.open = true
-                                },
-                                close(focusAfter) {
-                                    if (! this.open) return
-
-                                    this.open = false
-
-                                    focusAfter && focusAfter.focus()
-                                }
-                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
-                            x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                            x-id="['dropdown-button']" class="relative">
-
-                            <div class="relative">
-                                <span
-                                    class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full text-center text-white px-1">1</span>
+                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                x-id="['dropdown-button']" class="relative">
 
                                 <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
-                                    :aria-controls="$id('dropdown-button')" type="button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                        width="24" height="24">
-                                        <path fill="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                    :aria-controls="$id('dropdown-button')" type="button"
+                                    class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase">
+                                    Shop
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
                                     </svg>
                                 </button>
+
+                                <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                    x-on:click.outside="close($refs.button)"
+                                    :id="$id('dropdown-button')" style="display: none;"
+                                    class="absolute left-0 mt-2 w-max rounded-md bg-white shadow-md uppercase py-3 border z-10">
+                                    <p
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 hover:bg-gray-50 disabled:text-gray-500 border-b">
+                                        Led Headlights
+                                    </p>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                        Bulb Style
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                        Vehcile Make, Year, Model
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                        Sealed Beams
+                                    </a>
+                                </div>
                             </div>
+                        </div>
 
-                            <div x-ref="panel" x-show="open" x-transition.origin.top.left
-                                x-on:click.outside="close($refs.button)"
-                                :id="$id('dropdown-button')" style="display: none;"
-                                class="absolute -left-60 mt-10 w-max rounded-md bg-white shadow-md p-3 border font-semibold">
+                        <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                            Blog
+                        </div>
 
-                                <div>
-                                    <div
-                                        class="flex items-center space-x-3 border-b border-[#BABCC4] py-6">
-                                        <img src="/dist/images/Rectangle 679.svg" alt="">
+                        <div class="flex justify-start md:justify-center">
+                            <div x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
 
-                                        <div>
-                                            <h1>Compact LED Headlight Bulbs</h1>
-                                            <p>1 x $69.99</p>
+                                    this.$refs.button.focus()
+
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+
+                                    this.open = false
+
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                x-id="['dropdown-button']" class="relative">
+
+                                <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
+                                    :aria-controls="$id('dropdown-button')" type="button"
+                                    class="flex items-center gap-2 py-2.5 hover:border-b-2 border-black uppercase z-0">
+                                    Contact Us
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+
+                                <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                    x-on:click.outside="close($refs.button)"
+                                    :id="$id('dropdown-button')" style="display: none;"
+                                    class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-md uppercase py-3 border">
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                        Faq's
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                        Shipping
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                        Installation
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
+                                        Return Policy
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block">
+                            <input class="border py-3 px-6 rounded-lg border-[#BABCC4] w-60"
+                                type="text" name="" placeholder="Search">
+                        </div>
+
+                        <div class="hidden md:flex justify-center">
+                            <div x-data="{
+                                open: false,
+                                toggle() {
+                                    if (this.open) {
+                                        return this.close()
+                                    }
+
+                                    this.$refs.button.focus()
+
+                                    this.open = true
+                                },
+                                close(focusAfter) {
+                                    if (! this.open) return
+
+                                    this.open = false
+
+                                    focusAfter && focusAfter.focus()
+                                }
+                            }" x-on:keydown.escape.prevent.stop="close($refs.button)"
+                                x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+                                x-id="['dropdown-button']" class="relative">
+
+                                <div class="relative">
+                                    <span
+                                        class="absolute -top-1 -right-1 bg-red-500 text-xs rounded-full text-center text-white px-1">1</span>
+
+                                    <button x-ref="button" x-on:click="toggle()"
+                                        :aria-expanded="open"
+                                        :aria-controls="$id('dropdown-button')" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div x-ref="panel" x-show="open" x-transition.origin.top.left
+                                    x-on:click.outside="close($refs.button)"
+                                    :id="$id('dropdown-button')" style="display: none;"
+                                    class="absolute -left-60 mt-10 w-max rounded-md bg-white shadow-md p-3 border font-semibold">
+
+                                    <div>
+                                        <div
+                                            class="flex items-center space-x-3 border-b border-[#BABCC4] py-6">
+                                            <img src="/dist/images/Rectangle 679.svg" alt="">
+
+                                            <div>
+                                                <h1>Compact LED Headlight Bulbs</h1>
+                                                <p>1 x $69.99</p>
+                                            </div>
+
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-5 w-5" viewBox="0 0 20 20"
+                                                    fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
                                         </div>
 
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                                viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                        </span>
-                                    </div>
+                                        <div class="flex flex-col text-lg py-6 space-y-5">
+                                            <div class="flex justify-between">
+                                                <h1>Subtotal:</h1>
+                                                <h1>$69.99</h1>
+                                            </div>
 
-                                    <div class="flex flex-col text-lg py-6 space-y-5">
-                                        <div class="flex justify-between">
-                                            <h1>Subtotal:</h1>
-                                            <h1>$69.99</h1>
-                                        </div>
-
-                                        <div class="text-sm text-center space-x-3">
-                                            <button
-                                                class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">View
-                                                Cart</button>
-                                            <button
-                                                class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">Checkout</button>
+                                            <div class="text-sm text-center space-x-3">
+                                                <button
+                                                    class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">View
+                                                    Cart</button>
+                                                <button
+                                                    class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">Checkout</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </div>
         </header>
 
         <main>
             <!-- Hero Section -->
             <section class="h-screen">
-                <img src="/dist/images/hero.png" alt="" class="w-full">
+                <img src="/dist/images/hero.png" alt="" class="w-full h-full">
             </section>
 
             <!-- Featured Products -->
-            <section>
-                <div class="grid md:grid-cols-4 gap-x-7 w-fit mx-auto">
-                    <div class="rounded-lg p-5">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
-                            <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
-                        </div>
+            <section class="mt-16">
+                <div class="splide container mx-auto space-y-6" aria-labelledby="carousel-heading"
+                    id="splide1">
+                    <h1 class="font-bold text-center text-3xl md:text-5xl">Featured Products</h1>
 
-                        <div class="font-bold text-lg">
-                            <h2 class="">Compact LED Headlight Bulb Set</h2>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide pb-6">
+                                <div class="rounded-lg p-5">
+                                    <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
+                                        <span class="bg-red-500 text-white p-1.5">-15%</span>
+                                        <img src="/dist/images/Product image.png" alt=""
+                                            class="wfull">
+                                    </div>
 
-                            <p class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
+                                    <div class="font-bold text-lg">
+                                        <h2 class="">Compact LED Headlight Bulb Set</h2>
 
-                                <span class="font-normal text-[#444C66] text-base">(56
-                                    Reviews)</span>
-                            </p>
+                                        <p class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
 
-                            <p>
-                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
-                                $39.99
-                            </p>
-                        </div>
-                    </div>
+                                            <span class="font-normal text-[#444C66] text-base">(56
+                                                Reviews)</span>
+                                        </p>
 
-                    <div class="rounded-lg p-5">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
-                            <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
-                        </div>
+                                        <p>
+                                            <span
+                                                class="font-normal mr-2 text-[#444C66]">$79.99</span>
+                                            $39.99
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
 
-                        <div class="font-bold text-lg">
-                            <h2 class="">Compact LED Headlight Bulb Set</h2>
+                            <li class="splide__slide">
+                                <div class="rounded-lg p-5">
+                                    <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
+                                        <span class="bg-red-500 text-white p-1.5">-15%</span>
+                                        <img src="/dist/images/Product image.png" alt=""
+                                            class="wfull">
+                                    </div>
 
-                            <p class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
+                                    <div class="font-bold text-lg">
+                                        <h2 class="">Compact LED Headlight Bulb Set</h2>
 
-                                <span class="font-normal text-[#444C66] text-base">(56
-                                    Reviews)</span>
-                            </p>
+                                        <p class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
 
-                            <p>
-                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
-                                $39.99
-                            </p>
-                        </div>
-                    </div>
+                                            <span class="font-normal text-[#444C66] text-base">(56
+                                                Reviews)</span>
+                                        </p>
 
-                    <div class="rounded-lg p-5">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
-                            <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
-                        </div>
+                                        <p>
+                                            <span
+                                                class="font-normal mr-2 text-[#444C66]">$79.99</span>
+                                            $39.99
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
 
-                        <div class="font-bold text-lg">
-                            <h2 class="">Compact LED Headlight Bulb Set</h2>
+                            <li class="splide__slide">
+                                <div class="rounded-lg p-5">
+                                    <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
+                                        <span class="bg-red-500 text-white p-1.5">-15%</span>
+                                        <img src="/dist/images/Product image.png" alt=""
+                                            class="wfull">
+                                    </div>
 
-                            <p class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
+                                    <div class="font-bold text-lg">
+                                        <h2 class="">Compact LED Headlight Bulb Set</h2>
 
-                                <span class="font-normal text-[#444C66] text-base">(56
-                                    Reviews)</span>
-                            </p>
+                                        <p class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
 
-                            <p>
-                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
-                                $39.99
-                            </p>
-                        </div>
-                    </div>
+                                            <span class="font-normal text-[#444C66] text-base">(56
+                                                Reviews)</span>
+                                        </p>
 
-                    <div class="rounded-lg p-5">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
-                            <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
-                        </div>
+                                        <p>
+                                            <span
+                                                class="font-normal mr-2 text-[#444C66]">$79.99</span>
+                                            $39.99
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
 
-                        <div class="font-bold text-lg">
-                            <h2 class="">Compact LED Headlight Bulb Set</h2>
+                            <li class="splide__slide">
+                                <div class="rounded-lg p-5">
+                                    <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6 w-fit">
+                                        <span class="bg-red-500 text-white p-1.5">-15%</span>
+                                        <img src="/dist/images/Product image.png" alt=""
+                                            class="wfull">
+                                    </div>
 
-                            <p class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
+                                    <div class="font-bold text-lg">
+                                        <h2 class="">Compact LED Headlight Bulb Set</h2>
 
-                                <span class="font-normal text-[#444C66] text-base">(56
-                                    Reviews)</span>
-                            </p>
+                                        <p class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z" />
+                                                <path
+                                                    d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                    fill="rgba(251,191,36,1)" /></svg>
 
-                            <p>
-                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
-                                $39.99
-                            </p>
-                        </div>
+                                            <span class="font-normal text-[#444C66] text-base">(56
+                                                Reviews)</span>
+                                        </p>
+
+                                        <p>
+                                            <span
+                                                class="font-normal mr-2 text-[#444C66]">$79.99</span>
+                                            $39.99
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -485,544 +675,619 @@
 
             <!-- Arrivals -->
             <section class="mt-24">
-                <div class="container mx-auto space-y-6">
-                    <div class="flex gap-6 justify-center">
-                        <div class="relative">
-                            <div class="absolute py-9 px-14">
-                                <p class="uppercase text-[#E35F5F] font-semibold mb-1">New Arrival
-                                </p>
-                                <h2 class="font-bold text-2xl text-white mb-4">Super Bright
-                                    6000K <br> LED Fog Lights ( 1 Pair )</h2>
+                <div class="splide container mx-auto px-3" aria-labelledby="carousel-heading"
+                    id="splide2">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="relative">
+                                    <div class="absolute py-9 px-7 md:px-14">
+                                        <p class="uppercase text-[#E35F5F] font-semibold mb-1">
+                                            New Arrival
+                                        </p>
+                                        <h2 class="font-bold text-xl md:text-2xl text-white mb-4">
+                                            Super
+                                            Bright
+                                            6000K <br> LED Fog Lights ( 1 Pair )</h2>
 
-                                <button
-                                    class="bg-[#DB3433] uppercase text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Shop Now
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                fill="rgba(255,255,255,1)" /></svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <img src="/dist/images/new arrival goods cards.png" alt="">
-                        </div>
+                                        <button
+                                            class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Shop Now
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                        fill="rgba(255,255,255,1)" /></svg>
+                                            </span>
+                                        </button>
+                                    </div>
 
-                        <div class="relative">
-                            <div class="absolute py-9 px-14">
-                                <p class="uppercase text-[#E35F5F] font-semibold mb-1">New Arrival
-                                </p>
-                                <h2 class="font-bold text-2xl text-white mb-4">Super Bright
-                                    6000K <br> LED Fog Lights ( 1 Pair )</h2>
+                                    <img src="/dist/images/new arrival goods cards.png"
+                                        class="h-[212px]" alt="">
+                                </div>
+                            </li>
 
-                                <button
-                                    class="bg-[#DB3433] uppercase text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Shop Now
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                fill="rgba(255,255,255,1)" /></svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <img src="/dist/images/new arrival goods cards.png" alt="">
-                        </div>
-                    </div>
+                            <li class="splide__slide">
+                                <div class="relative">
+                                    <div class="absolute py-9 px-7 md:px-14">
+                                        <p class="uppercase text-[#E35F5F] font-semibold mb-1">
+                                            New Arrival
+                                        </p>
+                                        <h2 class="font-bold text-xl md:text-2xl text-white mb-4">
+                                            Super
+                                            Bright
+                                            6000K <br> LED Fog Lights ( 1 Pair )</h2>
 
+                                        <button
+                                            class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Shop Now
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                        fill="rgba(255,255,255,1)" /></svg>
+                                            </span>
+                                        </button>
+                                    </div>
 
-                    <div class="flex gap-6 justify-center">
-                        <div class="relative">
-                            <div class="absolute py-9 px-14">
-                                <p class="uppercase text-[#E35F5F] font-semibold mb-1">New Arrival
-                                </p>
-                                <h2 class="font-bold text-2xl text-white mb-4">Super Bright
-                                    6000K <br> LED Fog Lights ( 1 Pair )</h2>
+                                    <img src="/dist/images/new arrival goods cards.png"
+                                        class="h-[212px]" alt="">
+                                </div>
+                            </li>
 
-                                <button
-                                    class="bg-[#DB3433] uppercase text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Shop Now
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                fill="rgba(255,255,255,1)" /></svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <img src="/dist/images/new arrival goods cards.png" alt="">
-                        </div>
+                            <li class="splide__slide">
+                                <div class="relative">
+                                    <div class="absolute py-9 px-7 md:px-14">
+                                        <p class="uppercase text-[#E35F5F] font-semibold mb-1">
+                                            New Arrival
+                                        </p>
+                                        <h2 class="font-bold text-xl md:text-2xl text-white mb-4">
+                                            Super
+                                            Bright
+                                            6000K <br> LED Fog Lights ( 1 Pair )</h2>
 
-                        <div class="relative">
-                            <div class="absolute py-9 px-14">
-                                <p class="uppercase text-[#E35F5F] font-semibold mb-1">New Arrival
-                                </p>
-                                <h2 class="font-bold text-2xl text-white mb-4">Super Bright
-                                    6000K <br> LED Fog Lights ( 1 Pair )</h2>
+                                        <button
+                                            class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Shop Now
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                        fill="rgba(255,255,255,1)" /></svg>
+                                            </span>
+                                        </button>
+                                    </div>
 
-                                <button
-                                    class="bg-[#DB3433] uppercase text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Shop Now
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                fill="rgba(255,255,255,1)" /></svg>
-                                    </span>
-                                </button>
-                            </div>
-                            <img src="/dist/images/new arrival goods cards.png" alt="">
-                        </div>
+                                    <img src="/dist/images/new arrival goods cards.png"
+                                        class="h-[212px]" alt="">
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="relative">
+                                    <div class="absolute py-9 px-7 md:px-14">
+                                        <p class="uppercase text-[#E35F5F] font-semibold mb-1">
+                                            New Arrival
+                                        </p>
+                                        <h2 class="font-bold text-xl md:text-2xl text-white mb-4">
+                                            Super
+                                            Bright
+                                            6000K <br> LED Fog Lights ( 1 Pair )</h2>
+
+                                        <button
+                                            class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Shop Now
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                        fill="rgba(255,255,255,1)" /></svg>
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <img src="/dist/images/new arrival goods cards.png"
+                                        class="h-[212px]" alt="">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
             <!-- Newsletter -->
             <section class="mt-24 flex items-center mb-16">
-                <div class="absolute flex flex-col w-full items-center">
+                <div class="absolute flex flex-col w-full items-center px-2">
                     <p class="uppercase text-[#EA8B8A] font-semibold mb-4">Newsletter Subscribe</p>
 
-                    <h1 class="text-white font-bold text-[32px] mb-6">
+                    <h1 class="text-white font-bold text-center text-2xl md:text-[32px] mb-6">
                         The Latest Developments & Special Offers
                     </h1>
 
-                    <div class="max-w-[900px] relative">
+                    <div class="max-w-[800px] relative mx-auto">
                         <input type="email" placeholder="Enter Email Address"
-                            class="px-5 py-6 w-[900px] rounded-2xl">
+                            class="px-5 py-4 md:py-6 md:w-[500px] lg:w-[800px] rounded-lg md:rounded-2xl">
 
-                        <button
-                            class="absolute top-3.5 right-6 bg-[#DB3433] uppercase text-white text-sm px-6 py-3 rounded-lg flex gap-x-2">Subscribe
-                            Now
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="20" height="20">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                        fill="rgba(255,255,255,1)" /></svg>
-                            </span>
-                        </button>
+                        <div class="flex justify-center">
+                            <button
+                                class="mt-4 md:absolute top-0 md:right-6 bg-[#DB3433] uppercase text-white text-sm px-6 py-3 rounded-lg flex gap-x-2">Subscribe
+                                Now
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="20" height="20">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                            fill="rgba(255,255,255,1)" /></svg>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <img src="/dist/images/Frame 6356144.png" class="w-full" alt="">
+                <img src="/dist/images/Frame 6356144.png" class="w-full min-h-[306px]" alt="">
             </section>
 
             <!-- Customer Reviews -->
             <section class="pt-16 bg-[#F8F8F9] pb-10">
-                <div class="container mx-auto">
-                    <h1 class="font-bold text-5xl text-center mb-4">Customer Reviews</h1>
-                    <p class="text-2xl text-[#444C66] text-center">
-                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse <br>
-                        quam nihil molestiae consequatur vel illum dolorem
-                    </p>
+                <div class="splide container mx-auto px-8" aria-labelledby="carousel-heading"
+                    id="splide3">
+                    <div class="max-w-3xl w-full mx-auto">
+                        <h1 class="font-bold text-center text-3xl md:text-5xl mb-4">Customer Reviews
+                        </h1>
 
-                    <div class="grid md:grid-cols-3 gap-x-7 mt-10 w-fit mx-auto">
-                        <div class="rounded-lg p-5 bg-white max-w-[366px]">
-                            <div class="flex justify-between relative">
-                                <div class="flex flex-col space-y-2">
-                                    <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
-                                            </svg>
-                                        </span>
-                                    </h1>
-
-                                    <p class="text-[#444C66]">22/08/2022</p>
-
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                    </p>
-                                </div>
-
-                                <img src="/dist/images/Jeep.png" alt="" class="wfull">
-                            </div>
-
-                            <div class="mt-4">
-                                <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can see from
-                                    the
-                                    manufacturer
-                                    light to the led the difference is fanonamal I greatly recommend
-                                    these lights to anyone.</p>
-
-                                <button
-                                    class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Read More
-                                </button>
-                            </div>
-
-
-                            <div
-                                class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
-                                <img src="/dist/images/Rectangle 679.svg" class="w-1/3" alt="">
-
-                                <div>
-                                    <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact LED
-                                        Headlight
-                                        Bulb Sets</h1>
-
-                                    <button
-                                        class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
-                                        View Product
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rounded-lg p-5 bg-white max-w-[366px]">
-                            <div class="flex justify-between relative">
-                                <div class="flex flex-col space-y-2">
-                                    <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
-                                            </svg>
-                                        </span>
-                                    </h1>
-
-                                    <p class="text-[#444C66]">22/08/2022</p>
-
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                    </p>
-                                </div>
-
-                                <img src="/dist/images/Jeep.png" alt="" class="wfull">
-                            </div>
-
-                            <div class="mt-4">
-                                <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can see from
-                                    the
-                                    manufacturer
-                                    light to the led the difference is fanonamal I greatly recommend
-                                    these lights to anyone.</p>
-
-                                <button
-                                    class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Read More
-                                </button>
-                            </div>
-
-
-                            <div
-                                class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
-                                <img src="/dist/images/Rectangle 679.svg" class="w-1/3" alt="">
-
-                                <div>
-                                    <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact LED
-                                        Headlight
-                                        Bulb Sets</h1>
-
-                                    <button
-                                        class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
-                                        View Product
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="rounded-lg p-5 bg-white max-w-[366px]">
-                            <div class="flex justify-between relative">
-                                <div class="flex flex-col space-y-2">
-                                    <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
-                                            </svg>
-                                        </span>
-                                    </h1>
-
-                                    <p class="text-[#444C66]">22/08/2022</p>
-
-                                    <p class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                            width="24" height="24">
-                                            <path fill="none" d="M0 0h24v24H0z" />
-                                            <path
-                                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                                fill="rgba(251,191,36,1)" /></svg>
-                                    </p>
-                                </div>
-
-                                <img src="/dist/images/Jeep.png" alt="" class="wfull">
-                            </div>
-
-                            <div class="mt-4">
-                                <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can see from
-                                    the
-                                    manufacturer
-                                    light to the led the difference is fanonamal I greatly recommend
-                                    these lights to anyone.</p>
-
-                                <button
-                                    class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
-                                    Read More
-                                </button>
-                            </div>
-
-
-                            <div
-                                class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
-                                <img src="/dist/images/Rectangle 679.svg" class="w-1/3" alt="">
-
-                                <div>
-                                    <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact LED
-                                        Headlight
-                                        Bulb Sets</h1>
-
-                                    <button
-                                        class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
-                                        View Product
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="md:text-2xl text-[#444C66] text-center">
+                            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                            quam nihil molestiae consequatur vel illum dolorem
+                        </p>
                     </div>
 
-                    <div class="flex justify-center mt-12">
-                        <button
-                            class="border-2 border-[#424242] text-[#424242] py-3 px-6 rounded-lg flex gap-x-2">
-                            View All Reviews
+                    <div class="splide__track mt-10">
+                        <ul class="splide__list">
+                            <li class="splide__slide pb-10">
+                                <div class="relative rounded-lg p-5 bg-white max-w-[366px] border">
+                                    <div class="flex justify-between relative">
+                                        <div class="flex flex-col space-y-2">
+                                            <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
+                                                    </svg>
+                                                </span>
+                                            </h1>
 
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                        fill="rgba(66,66,66,1)" /></svg>
-                            </span>
-                        </button>
+                                            <p class="text-[#444C66]">22/08/2022</p>
+
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                            </p>
+                                        </div>
+
+                                        <img src="/dist/images/Jeep.png" alt="" class="wfull">
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can
+                                            see from
+                                            the
+                                            manufacturer
+                                            light to the led the difference is fanonamal I greatly
+                                            recommend
+                                            these lights to anyone.</p>
+
+                                        <button
+                                            class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Read More
+                                        </button>
+                                    </div>
+
+
+                                    <div
+                                        class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
+                                        <img src="/dist/images/Rectangle 679.svg" class="w-1/3"
+                                            alt="">
+
+                                        <div>
+                                            <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact
+                                                LED
+                                                Headlight
+                                                Bulb Sets</h1>
+
+                                            <button
+                                                class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
+                                                View Product
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="rounded-lg p-5 bg-white max-w-[366px] border">
+                                    <div class="flex justify-between relative">
+                                        <div class="flex flex-col space-y-2">
+                                            <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
+                                                    </svg>
+                                                </span>
+                                            </h1>
+
+                                            <p class="text-[#444C66]">22/08/2022</p>
+
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                            </p>
+                                        </div>
+
+                                        <img src="/dist/images/Jeep.png" alt="" class="wfull">
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can
+                                            see from
+                                            the
+                                            manufacturer
+                                            light to the led the difference is fanonamal I greatly
+                                            recommend
+                                            these lights to anyone.</p>
+
+                                        <button
+                                            class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Read More
+                                        </button>
+                                    </div>
+
+
+                                    <div
+                                        class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
+                                        <img src="/dist/images/Rectangle 679.svg" class="w-1/3"
+                                            alt="">
+
+                                        <div>
+                                            <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact
+                                                LED
+                                                Headlight
+                                                Bulb Sets</h1>
+
+                                            <button
+                                                class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
+                                                View Product
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="splide__slide">
+                                <div class="rounded-lg p-5 bg-white max-w-[366px] border">
+                                    <div class="flex justify-between relative">
+                                        <div class="flex flex-col space-y-2">
+                                            <h1 class="flex gap-x-2 font-semibold text-lg">Joseph E.
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z" />
+                                                    </svg>
+                                                </span>
+                                            </h1>
+
+                                            <p class="text-[#444C66]">22/08/2022</p>
+
+                                            <p class="flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                                        fill="rgba(251,191,36,1)" /></svg>
+                                            </p>
+                                        </div>
+
+                                        <img src="/dist/images/Jeep.png" alt="" class="wfull">
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <p class="text-[#2D2D2D] mb-4 text-justify">Love how I can
+                                            see from
+                                            the
+                                            manufacturer
+                                            light to the led the difference is fanonamal I greatly
+                                            recommend
+                                            these lights to anyone.</p>
+
+                                        <button
+                                            class="bg-[#DB3433] text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                            Read More
+                                        </button>
+                                    </div>
+
+
+                                    <div
+                                        class="flex items-center justifybetween border-t border-[#BABCC4] mt-6 pt-2 space-x-4">
+                                        <img src="/dist/images/Rectangle 679.svg" class="w-1/3"
+                                            alt="">
+
+                                        <div>
+                                            <h1 class="text-sm text-[#2D2D2D] mb-4">CARIFEX® Compact
+                                                LED
+                                                Headlight
+                                                Bulb Sets</h1>
+
+                                            <button
+                                                class="text-[#2D2D2D] hover:border px-8 py-3 rounded-lg flex gap-x-2">
+                                                View Product
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+
+                <div class="flex justify-center mt-12">
+                    <button
+                        class="border-2 border-[#424242] text-[#424242] py-3 px-6 rounded-lg flex gap-x-2">
+                        View All Reviews
+
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                    fill="rgba(66,66,66,1)" /></svg>
+                        </span>
+                    </button>
+                </div>
                 </div>
             </section>
 
-            <section class="pt-[104px] pb-[88px]">
-                <div class="container mx-auto">
-                    <h1 class="font-bold text-5xl text-center mb-4">Latest News & Blog</h1>
-                    <p class="text-2xl text-[#444C66] text-center">
-                        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse <br>
-                        quam nihil molestiae consequatur vel illum dolorem
-                    </p>
+            <!-- Latest News -->
+            <section class="pt-[76px] md:pt-[104px] pb-7 md:pb-[88px]">
+                <div class="splide container mx-auto px-3" aria-labelledby="carousel-heading"
+                    id="splide4">
+                    <div class="max-w-3xl w-full mx-auto">
+                        <h1 class="font-bold text-center text-3xl md:text-5xl mb-4">Latest News &
+                            Blog</h1>
 
-                    <div class="grid md:grid-cols-3 gap-x-7 mt-10 w-fit mx-auto">
-                        <div class="rounded-lg bg-white max-w-[390px]">
-                            <div class="flex flex-col relative">
-                                <div class="absolute p-5 text-white bottom-0 bg-black/50">
-                                    <p class="flex gap-x-4 mb-1">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
-                                                    fill="rgba(234,139,138,1)" /></svg>
-                                        </span>
+                        <p class="md:text-2xl text-[#444C66] text-center">
+                            Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                            quam nihil molestiae consequatur vel illum dolorem
+                        </p>
+                    </div>
 
-                                        9 Jan 2022
-                                    </p>
+                    <div class="splide__track mt-10">
+                        <ul class="splide__list">
+                            <li class="splide__slide pb-12">
+                                <div class="rounded-lg bg-white max-w-[390px]">
+                                    <div class="flex flex-col relative">
+                                        <div class="absolute p-5 text-white bottom-0 bg-black/50">
+                                            <p class="flex gap-x-4 mb-1">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
+                                                            fill="rgba(234,139,138,1)" /></svg>
+                                                </span>
 
-                                    <p class="font-bold text-lg mb-2">Don’t choose your Headlights
-                                        without reading this first</p>
+                                                9 Jan 2022
+                                            </p>
+
+                                            <p class="font-bold text-lg mb-2">Don’t choose your
+                                                Headlights
+                                                without reading this first</p>
 
 
-                                    <button class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
-                                        Read More
+                                            <button
+                                                class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
+                                                Read More
 
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                    fill="rgba(255,255,255,1)" /></svg>
-                                        </span>
-                                    </button>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                            fill="rgba(255,255,255,1)" /></svg>
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                        <img src="/dist/images/car1.png" alt="" class="wfull">
+                                    </div>
                                 </div>
+                            </li>
 
-                                <img src="/dist/images/car1.png" alt="" class="wfull">
-                            </div>
-                        </div>
+                            <li class="splide__slide">
+                                <div class="rounded-lg bg-white max-w-[390px]">
+                                    <div class="flex flex-col relative">
+                                        <div class="absolute p-5 text-white bottom-0 bg-black/50">
+                                            <p class="flex gap-x-4 mb-1">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
+                                                            fill="rgba(234,139,138,1)" /></svg>
+                                                </span>
 
-                        <div class="rounded-lg bg-white max-w-[390px]">
-                            <div class="flex flex-col relative">
-                                <div class="absolute p-5 text-white bottom-0 bg-black/50">
-                                    <p class="flex gap-x-4 mb-1">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
-                                                    fill="rgba(234,139,138,1)" /></svg>
-                                        </span>
+                                                9 Jan 2022
+                                            </p>
 
-                                        9 Jan 2022
-                                    </p>
-
-                                    <p class="font-bold text-lg mb-2">Don’t choose your Headlights
-                                        without reading this first</p>
+                                            <p class="font-bold text-lg mb-2">Don’t choose your
+                                                Headlights
+                                                without reading this first</p>
 
 
-                                    <button class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
-                                        Read More
+                                            <button
+                                                class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
+                                                Read More
 
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                    fill="rgba(255,255,255,1)" /></svg>
-                                        </span>
-                                    </button>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                            fill="rgba(255,255,255,1)" /></svg>
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                        <img src="/dist/images/car2.png" alt="" class="wfull">
+                                    </div>
                                 </div>
+                            </li>
 
-                                <img src="/dist/images/car2.png" alt="" class="wfull">
-                            </div>
-                        </div>
+                            <li class="splide__slide">
+                                <div class="rounded-lg bg-white max-w-[390px]">
+                                    <div class="flex flex-col relative">
+                                        <div class="absolute p-5 text-white bottom-0 bg-black/50">
+                                            <p class="flex gap-x-4 mb-1">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
+                                                            fill="rgba(234,139,138,1)" /></svg>
+                                                </span>
 
-                        <div class="rounded-lg bg-white max-w-[390px]">
-                            <div class="flex flex-col relative">
-                                <div class="absolute p-5 text-white bottom-0 bg-black/50">
-                                    <p class="flex gap-x-4 mb-1">
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z"
-                                                    fill="rgba(234,139,138,1)" /></svg>
-                                        </span>
+                                                9 Jan 2022
+                                            </p>
 
-                                        9 Jan 2022
-                                    </p>
-
-                                    <p class="font-bold text-lg mb-2">Don’t choose your Headlights
-                                        without reading this first</p>
+                                            <p class="font-bold text-lg mb-2">Don’t choose your
+                                                Headlights
+                                                without reading this first</p>
 
 
-                                    <button class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
-                                        Read More
+                                            <button
+                                                class="bg-[#DB3433] px-6 py-3 rounded-lg flex gap-x-2">
+                                                Read More
 
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24" width="24" height="24">
-                                                <path fill="none" d="M0 0h24v24H0z" />
-                                                <path
-                                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                                    fill="rgba(255,255,255,1)" /></svg>
-                                        </span>
-                                    </button>
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24" width="24" height="24">
+                                                        <path fill="none" d="M0 0h24v24H0z" />
+                                                        <path
+                                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                            fill="rgba(255,255,255,1)" /></svg>
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                        <img src="/dist/images/car3.png" alt="" class="wfull">
+                                    </div>
                                 </div>
-
-                                <img src="/dist/images/car3.png" alt="" class="wfull">
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
-
         </main>
 
 
