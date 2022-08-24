@@ -168,15 +168,16 @@
                     </select>
                 </section>
 
-                <section
-                    class="mt-10 grid md:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-6 justify-between">
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+                <section :class="{ 'grid-cols-1': !grid, 'md:grid-cols-3 xl:grid-cols-4': grid }"
+                    class="mt-10 grid gap-x-5 gap-y-6 justify-between">
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -219,16 +220,114 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+                            <span class="bg-red-500 text-white p-1.5">-15%</span>
+                            <img src="/dist/images/Product image.png" alt="">
+                        </div>
+
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
+                            <h2>Compact LED Headlight Bulb Set</h2>
+
+                            <p class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                        fill="rgba(251,191,36,1)" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                        fill="rgba(251,191,36,1)" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                        fill="rgba(251,191,36,1)" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                        fill="rgba(251,191,36,1)" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                        fill="rgba(251,191,36,1)" /></svg>
+
+                                <span class="font-normal text-[#444C66] text-sm">(56
+                                    Reviews)</span>
+                            </p>
+
+                            <p>
+                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
+                                $39.99
+                            </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -271,16 +370,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -323,16 +445,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -375,16 +520,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -427,16 +595,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -479,16 +670,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -531,16 +745,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -583,16 +820,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -635,16 +895,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -687,16 +970,39 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
+
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
+
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
+
+                    <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }" class="rounded-lg w-fit">
+                        <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
+                            class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
                             <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
+                            <img src="/dist/images/Product image.png" alt="">
                         </div>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
+                        <div :class="{ 'justify-center flex flex-col max-w-xl': !grid }" class="font-bold text-lg mt-3 space-y-2">
                             <h2>Compact LED Headlight Bulb Set</h2>
 
                             <p class="flex items-center">
@@ -739,58 +1045,27 @@
                                 <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
                                 $39.99
                             </p>
-                        </div>
-                    </div>
 
-                    <div class="rounded-lg w-fit">
-                        <div class="bg-[#DBDBDB] p-5 rounded-lg space-y-6">
-                            <span class="bg-red-500 text-white p-1.5">-15%</span>
-                            <img src="/dist/images/Product image.png" alt="" class="wfull">
-                        </div>
+                            <div :class="{ 'hidden': grid }" class="space-y-2 font-normal">
+                                <p class="text-base text-[#444C66] text-justify">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium dolorem udantium, totam rem aperiam, eaque ipsa quae
+                                    abventore
+                                </p>
 
-                        <div class="font-bold text-lg mt-3 space-y-1">
-                            <h2>Compact LED Headlight Bulb Set</h2>
-
-                            <p class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    width="24" height="24">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
-                                        fill="rgba(251,191,36,1)" /></svg>
-
-                                <span class="font-normal text-[#444C66] text-sm">(56
-                                    Reviews)</span>
-                            </p>
-
-                            <p>
-                                <span class="font-normal mr-2 text-[#444C66]">$79.99</span>
-                                $39.99
-                            </p>
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm items-center text-white px-6 py-3 rounded-lg flex gap-x-2">
+                                    Shop Now
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                                fill="rgba(255,255,255,1)" /></svg>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>

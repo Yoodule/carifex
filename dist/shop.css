@@ -838,6 +838,24 @@ video {
   width: 1rem;
 }
 
+.w-72{
+  width: 18rem;
+}
+
+.min-w-\[72\]{
+  min-width: 72;
+}
+
+.min-w-\[\]{
+  min-width: ;
+}
+
+.min-w-fit{
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
 .max-w-\[800px\]{
   max-width: 800px;
 }
@@ -862,8 +880,20 @@ video {
   max-width: 260px;
 }
 
+.max-w-xl{
+  max-width: 36rem;
+}
+
 .cursor-pointer{
   cursor: pointer;
+}
+
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -967,6 +997,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-16 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(4rem * var(--tw-space-x-reverse));
+  margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .divide-white > :not([hidden]) ~ :not([hidden]){
@@ -1272,6 +1308,11 @@ video {
   line-height: 2rem;
 }
 
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-semibold{
   font-weight: 600;
 }
@@ -1376,6 +1417,10 @@ video {
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.outline{
+  outline-style: solid;
 }
 
 .transition{
@@ -1570,5 +1615,11 @@ video {
 @media (min-width: 1280px){
   .xl\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:space-x-16 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(4rem * var(--tw-space-x-reverse));
+    margin-left: calc(4rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
