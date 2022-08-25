@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
-       Manrope: ["Manrope", "sans-serif"],
+				sans: ["Manrope", ...defaultTheme.fontFamily.sans]
       },
     },
   },
