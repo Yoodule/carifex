@@ -116,15 +116,15 @@
                 </div>
             </section>
 
-            <section x-data="{ selected: null }" class="mt-20 space-y-16 mb-40 max-w-7xl font-bold">
+            <section x-data="{ selected: null }" class="mt-20 space-y-16 mb-40 max-w-7xl">
                 <div>
-                    <h1 class="text-[32px] mb-6">Installation</h1>
+                    <h1 class="text-[32px] mb-6  font-bold">Installation</h1>
 
                     <div class="w-full bg-white border-y border-[#BABCC4]">
                         <button @click="selected !== 1 ? selected = 1 : selected = null"
                             class="w-full">
                             <p
-                                class="uppercase px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between">
+                                class="uppercase px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between  font-bold">
                                 Led Installation Guide
 
                                 <span x-show="selected != 1">
@@ -146,20 +146,120 @@
                         <div class="relative overflow-hidden transition-all max-h-0 duration-700"
                             style="" x-ref="container1"
                             x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                            <div class="px-6 pb-3">
+                            <div class="px-6 pb-3 text-[#444C66] space-y-4">
+                                <div>
+                                    <h1 class="text-lg font-bold">
+                                        Extremely Simple Installation - Fits Right Into Your Vehicle
+                                    </h1>
+
+                                    <ul class="list-decimal py-3 pl-5">
+                                        <li>Open your vehicle's hood.</li>
+                                        <li>Open the back cap of the headlight assembly and take
+                                            out the stock bulb.</li>
+                                        <li>Insert the LED bulb into the headlight assembly.</li>
+                                        <li>Plug the LED bulb to power socket.</li>
+                                        <li>You're done. Installation is as simple as swapping out
+                                            the bulbs.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="flex space-x-4 overflow-x-auto">
+                                    <img src="/dist/images/Step1.png" alt="">
+                                    <img src="/dist/images/Step2.png" alt="">
+                                    <img src="/dist/images/Step3.png" alt="">
+                                    <img src="/dist/images/Step4.png" alt="">
+                                </div>
+
+                                <div>
+                                    <h1 class="text-lg font-bold mb-4">
+                                       Installation Notes
+                                    </h1>
+
+                                    <ul>
+                                        <li class="flex gap-x-2 text-[#444C66] font-semibold">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6.003 11L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z" />
+                                                </svg>
+                                            </span>
+
+                                            Be very attentive during the installation process to
+                                            minimize all chances of accidents.
+                                        </li>
+
+                                        <li class="flex gap-x-2 text-[#444C66] font-semibold">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6.003 11L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z" />
+                                                </svg>
+                                            </span>
+
+                                            Never touch the bulb with your fingers because it might
+                                            blemish it.
+                                        </li>
+
+                                        <li class="flex gap-x-2 text-[#444C66] font-semibold">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6.003 11L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z" />
+                                                </svg>
+                                            </span>
+
+                                            Wearing gloves is ideal when dealing with the bulb. If
+                                            ever it gets in contact with any contaminents, simply
+                                            wipe the bulb with rubbing alcohol and a dry cloth.
+                                        </li>
+
+                                        <li class="flex gap-x-2 text-[#444C66] font-semibold">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6.003 11L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z" />
+                                                </svg>
+                                            </span>
+
+                                            Always perform above operation when vehicle is off, not
+                                            running.
+                                        </li>
+
+                                        <li class="flex gap-x-2 text-[#444C66] font-semibold">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z" />
+                                                    <path
+                                                        d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6.003 11L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z" />
+                                                </svg>
+                                            </span>
+
+                                            Do not touch bulb when turning power on and off.
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h1 class="text-[32px] mb-6">Shipping</h1>
+                    <h1 class="text-[32px] mb-6  font-bold">Shipping</h1>
 
                     <div class="w-full bg-white border-y border-[#BABCC4]">
                         <button @click="selected !== 2 ? selected = 2 : selected = null"
                             class="w-full">
                             <p
-                                class="px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between">
+                                class="px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between  font-bold">
                                 Shipping Policy
 
                                 <span x-show="selected != 2">
@@ -188,13 +288,13 @@
                 </div>
 
                 <div>
-                    <h1 class="text-[32px] mb-6">Return Policy</h1>
+                    <h1 class="text-[32px] mb-6  font-bold">Return Policy</h1>
 
                     <div class="w-full bg-white border-y border-[#BABCC4]">
                         <button @click="selected !== 3 ? selected = 3 : selected = null"
                             class="w-full">
                             <p
-                                class="px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between">
+                                class="px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between  font-bold">
                                 Return Policy
 
                                 <span x-show="selected != 3">
