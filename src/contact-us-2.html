@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=depvice-width, initial-scale=1.0">
+        <link href="/dist/index.css" rel="stylesheet">
+
+        <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    </head>
+
+    <body class="bg-[#E5E5E5]">
+        <main class="py-16">
+            <section x-data="{ toggle: false }" class="container mx-auto mb-56 max-w-7xl">
+                <div>
+                    <h1 class="text-[32px] mb-10 font-bold">All Emails are attended to within 12-24
+                        HOURS. </h1>
+
+                    <div class="w-full bg-white border-y border-[#BABCC4]">
+                        <button @click="toggle !== true ? toggle = true : toggle = false"
+                            class="w-full">
+                            <p
+                                class="px-6 py-4 text-2xl text-[#444C66] flex items-center justify-between  font-bold">
+                                Self Help Resolution
+
+                                <span x-show="toggle == false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" /></svg>
+                                </span>
+
+                                <span x-show="toggle != false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M5 11h14v2H5z" /></svg>
+                                </span>
+                            </p>
+                        </button>
+
+                        <div class="relative overflow-hidden transition-all max-h-0 duration-700"
+                            style="" x-ref="container"
+                            x-bind:style="toggle == true ? 'max-height: ' + $refs.container.scrollHeight + 'px' : ''">
+                            <div class="pl-6 pr-12 pb-3 text-[#444C66] space-y-6 text-justify">
+                                <div class="space-y-2">
+                                    <h3 class="font-bold uppercase">
+                                        MY HEADLIGHTS DOESN’T LIGHT UP AFTER INSTALLATION
+                                    </h3>
+
+                                    <p class="flex flex-col gap-y-2">
+                                        <span>
+                                            If your headlights bulb don't light up after
+                                            installation, below
+                                            is a possible solution. We suggest you connect the ( - )
+                                            to the
+                                            positive ( + ) and vice versa, see if it works.
+                                        </span>
+
+                                        <span>
+                                            Please try that and let us know if it solves the
+                                            problem.
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <h3 class="font-bold uppercase">
+                                        MY HEADLIGHT PLUGS ARE DIFFERENT FROM WHAT I RECEIVED
+                                    </h3>
+
+                                    <p class="flex flex-col gap-y-2">
+                                        <span>
+                                            If our headlight plugs and yours do not align correctly,
+                                            please always attach a picture or video of your
+                                            headlight bulbs as well the ones you received from us
+                                            for proper resolution/replacements. This is mandatory
+                                            for quick resolution of your issue.
+                                        </span>
+
+                                        <span>
+                                            Since our products are aftermarket, minor adjustments
+                                            need to be made to the fitting of our items, and if a
+                                            customer encounters any of this issue, our experienced
+                                            customer support agent will guide them on the best
+                                            practice possible to make this item work/fit correctly.
+                                            Send an email directly to <span
+                                                class="font-semibold">support@carifex.com</span>
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <h3 class="font-bold uppercase">
+                                        MY HEADLIGHTS ARE FLICKERING AFTER INSTALLATION
+                                    </h3>
+
+                                    <p class="flex flex-col gap-y-2">
+                                        <span class="font-bold">
+                                            If the bulbs are flickering, below are possible
+                                            solutions:
+                                        </span>
+
+                                        <span>
+                                            <ul class="list-decimal pl-5">
+                                                <li>
+                                                    The bulb may not be bad but we cannot tell
+                                                    unless you test them using a meter reader or
+                                                    Battery charger of 12v to see if they actually
+                                                    get lit up outside the vehicle.
+                                                </li>
+
+                                                <li>
+                                                    If the bulbs come on outside the vehicle and
+                                                    light up very well, then you may need to get a
+                                                    canbus decoder so they stop flickering when
+                                                    plugged into your vehicle
+                                                    <a href="https://carifex.com/products/led-headlight-canbus-wiring-harness-adapter"
+                                                        class="font-semibold">
+                                                        (https://carifex.com/products/led-headlight-canbus-wiring-harness-adapter)
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    If they don't come up after the test, then the
+                                                    bulbs are bad and may need replacement from us.
+                                                </li>
+
+                                                <li>
+                                                    Replacement can be done only after the test has
+                                                    been carried out. A photo/video proof is
+                                                    required before emailing us, because if we send
+                                                    in another replacement and the same thing
+                                                    happened that's not good for the both of us.
+                                                </li>
+                                            </ul>
+                                        </span>
+
+                                        <p>
+                                            If the issue is not resolved after this steps, please
+                                            write back to us for a REFUND procedure.
+                                        </p>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <h3 class="font-bold uppercase">
+                                        MY HIGH/LOW BEAM HEADLIGHTS ARE NOT WORKING ( H13/ 9007 /
+                                        9004 / H4 BULBS )
+                                    </h3>
+
+                                    <p class="flex flex-col gap-y-2">
+                                        <span>
+                                            These are very rare cases where the headlights for our
+                                            double beams are wired incorrectly.
+                                        </span>
+
+                                        <span>
+                                            If you’re having this issue with Single/both headlights,
+                                            EMAIL us with your order number for
+                                            exchange/replacement.
+                                        </span>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <h3 class="font-bold uppercase">
+                                        MY CARIFEX LED HEADLIGHTS BULBS ARE NOT BRIGHT ENOUGH
+                                    </h3>
+
+                                    <p>
+                                        Alternatively, you can try our 10,000 lumens headlight
+                                        bulbs which are way more brighter.
+                                        <a
+                                            href="https://carifex.com/products/non-flickering-led-headlight-set">
+                                            https://carifex.com/products/non-flickering-led-headlight-set
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <p>1.214.814.8425 ( MON-FRI 8AM-5PM EST )</p>
+                                    <p>support@carifex.com</p>
+                                    <p>Carifex Support Team.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="flex justify-center items-center relative">
+                <div class="absolute">
+                    <div class="flex space-x-28 relative -top-14">
+                        <div class="w-[522px] flex flex-col-reverse">
+                            <div
+                                class="h-fit p-6 text-white bg-[#9A9A9A]/20 backdrop-blur-lg space-y-4 ">
+                                <h1 class="font-bold text-[32px]">Contact Us</h1>
+
+                                <h2 class="text-lg">11424 Reeder Rd, Dallas TX. 75229</h2>
+
+                                <h2 class="font-semibold text-[20px]">Carifex Support Team. </h2>
+
+                                <div class="flex items-center space-x-3">
+                                    <p class="bg-white p-2 rounded-full w-fit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M9.366 10.682a10.556 10.556 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296 11.422 11.422 0 0 0 4.583 1.364 1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995c-.53.055-1.064.082-1.602.082C9.94 21 3 14.06 3 5.5c0-.538.027-1.072.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.422 11.422 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294l-1.238.884zm-2.522-.657l1.9-1.357A13.41 13.41 0 0 1 7.647 5H5.01c-.006.166-.009.333-.009.5C5 12.956 11.044 19 18.5 19c.167 0 .334-.003.5-.01v-2.637a13.41 13.41 0 0 1-3.668-1.097l-1.357 1.9a12.442 12.442 0 0 1-1.588-.75l-.058-.033a12.556 12.556 0 0 1-4.702-4.702l-.033-.058a12.442 12.442 0 0 1-.75-1.588z" />
+                                        </svg>
+                                    </p>
+
+                                    <span class="font-semibold text-lg">
+                                        888-786-2212
+                                    </span>
+                                </div>
+
+                                <div class="flex items-center space-x-3">
+                                    <p class="bg-white p-2 rounded-full w-fit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z" />
+                                        </svg>
+                                    </p>
+
+                                    <span class="font-semibold text-lg">
+                                        support@carifex.com
+                                    </span>
+                                </div>
+
+                                <p class="text-lg">Monday to Friday from 9am to 5pm (EST)</p>
+
+                                <div class="flex space-x-2">
+                                    <p class="border border-white p-2 rounded-full w-fit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"
+                                                fill="rgba(255,255,255,1)" />
+                                        </svg>
+                                    </p>
+
+                                    <p class="border border-white p-2 rounded-full w-fit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"
+                                                fill="rgba(255,255,255,1)" />
+                                        </svg>
+                                    </p>
+
+                                    <p class="border border-white p-2 rounded-full w-fit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            width="24" height="24">
+                                            <path fill="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"
+                                                fill="rgba(255,255,255,1)" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 px-14 py-10 text-[#2D2D2D] max-w-[452px] bg-white">
+                            <h1 class="font-bold text-[32px] mb-6">Get in Touch</h1>
+
+                            <div class="space-y-4 mb-10">
+                                <p class="font-semibold">
+                                    Have Questions?
+
+                                    <span class="font-normal text-[#444C66]">
+                                        Feel to reach to us by filling the short form below.
+                                    </span>
+                                </p>
+
+                                <input type="text" placeholder="Name"
+                                    class="py-4 px-5 w-full rounded-lg placeholder-[#757A89] border">
+
+                                <input type="email" placeholder="Email address"
+                                    class="py-4 px-5 w-full rounded-lg placeholder-[#757A89] border">
+
+                                <input type="text" placeholder="Phone number"
+                                    class="py-4 px-5 w-full rounded-lg placeholder-[#757A89] border">
+
+                                <textarea rows="5" placeholder="Message" maxlength="100"
+                                    class="py-4 px-5 w-full rounded-lg placeholder-[#757A89] border"></textarea>
+
+                            </div>
+                            <button
+                                class="bg-[#DB3433] uppercase font-semibold items-center text-white px-6 py-3 rounded-lg w-full">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="/dist/images/map.png" class="w-screen h-[654px]" alt="">
+            </section>
+        </main>
+    </body>
+
+</html>
