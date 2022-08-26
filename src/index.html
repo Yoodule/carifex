@@ -178,9 +178,10 @@
                     <nav class="md:flex md:items-center md:space-x-7 flex-col md:flex-row w-full"
                         :class="{ 'flex shadow-3xl': isOpen, 'hidden': !isOpen }"
                         x-show.transition="true">
-                        <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                        <a href="./index.html"
+                            class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
                             Home
-                        </div>
+                        </a>
 
                         <div class="flex justify-start md:justify-center">
                             <div x-data="{
@@ -223,10 +224,10 @@
                                     x-on:click.outside="close($refs.button)"
                                     :id="$id('dropdown-button')" style="display: none;"
                                     class="absolute left-0 mt-2 w-max rounded-md bg-white shadow-md uppercase py-3 border z-10">
-                                    <p
+                                    <a href="./shop.html"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 hover:bg-gray-50 disabled:text-gray-500 border-b">
                                         Led Headlights
-                                    </p>
+                                    </a>
 
                                     <a href="#"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
@@ -246,9 +247,10 @@
                             </div>
                         </div>
 
-                        <div class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                        <a href="./blog.html"
+                            class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
                             Blog
-                        </div>
+                        </a>
 
                         <div class="flex justify-start md:justify-center">
                             <div x-data="{
@@ -291,22 +293,22 @@
                                     x-on:click.outside="close($refs.button)"
                                     :id="$id('dropdown-button')" style="display: none;"
                                     class="absolute left-0 mt-2 w-40 rounded-md bg-white shadow-md uppercase py-3 border">
-                                    <a href="#"
+                                    <a href="./faqs.html"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50 disabled:text-gray-500">
                                         Faq's
                                     </a>
 
-                                    <a href="#"
+                                    <a href="./contact-us.html"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
                                         Shipping
                                     </a>
 
-                                    <a href="#"
+                                    <a href="./contact-us.html"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
                                         Installation
                                     </a>
 
-                                    <a href="#"
+                                    <a href="./contact-us.html"
                                         class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-sm hover:bg-gray-50">
                                         Return Policy
                                     </a>
@@ -391,9 +393,10 @@
                                             </div>
 
                                             <div class="text-sm text-center space-x-3">
-                                                <button
+                                                <a href="./cart.html"
                                                     class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">View
-                                                    Cart</button>
+                                                    Cart</a>
+
                                                 <button
                                                     class="uppercase text-white bg-red-500 py-3 px-6 rounded-lg font-normal">Checkout</button>
                                             </div>
