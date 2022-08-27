@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/dist/index.css" rel="stylesheet">
+
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css">
+
+        <style>
+            .splide__slide img {
+                width: 100%;
+                height: auto;
+                /* height: 100%;
+                object-fit: cover; */
+            }
+
+            .splide__slide {
+                opacity: 0.6;
+            }
+
+            .splide__slide.is-active {
+                opacity: 1;
+            }
+        </style>
+
+        <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js">
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var main = new Splide('#main-carousel', {
+                    type: 'fade',
+                    rewind: true,
+                    pagination: false,
+                    arrows: false,
+                });
+
+                var thumbnails = new Splide('#thumbnail-carousel', {
+                    fixedWidth: 100,
+                    //fixedHeight: 60,
+                    gap: 10,
+                    rewind: true,
+                    pagination: false,
+                    isNavigation: true,
+                    focus: 'center',
+
+                    breakpoints: {
+                        600: {
+                            fixedWidth: 60,
+                            fixedHeight: 44,
+                        },
+                    },
+                });
+
+                main.sync(thumbnails);
+                main.mount();
+                thumbnails.mount();
+            });
+        </script>
+    </head>
+
+    <body>
+        <main class="container mx-auto py-12">
+            <section class="flex xl:justify-center space-x-14">
+                <div>
+                    <section id="main-carousel" class="splide p-9 bg-gray-100">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="/dist/images/Product image.png">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/dist/images/Product image.png">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/dist/images/Product image.png">
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="thumbnail-carousel" class="splide mt-6">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="/dist/images/slide.png">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/dist/images/slide.png">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/dist/images/slide.png">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="/dist/images/slide.png">
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="p-10 xl:max-w-xl">
+                    <h2 class="font-bold text-2xl mb-2">
+                        Compact LED Headlight Bulb
+                    </h2>
+
+                    <p class="flex items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                fill="rgba(251,191,36,1)" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                fill="rgba(251,191,36,1)" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                fill="rgba(251,191,36,1)" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                fill="rgba(251,191,36,1)" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                            height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z"
+                                fill="rgba(251,191,36,1)" /></svg>
+
+                        <span class="font-normal text-[#444C66] ml-2">(56 Customer
+                            Reviews)</span>
+                    </p>
+
+                    <p class="text-2xl text-[#2D2D2D] font-bold flex items-center mb-4">
+                        <s class="font-semibold mr-2 text-lg text-[#444C66]">$79.99</s>
+                        $39.99
+                    </p>
+
+                    <p class="text-[#444C66] text-lg text-justify mb-4 flex items-center gap-x-2">
+                        How to place your order
+
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"
+                                    fill="rgba(117,122,137,1)" /></svg>
+                        </span>
+                    </p>
+
+                    <div class="mb-4 flex w-fit space-x-4">
+                        <div class="space-y-2">
+                            <p class="text-[#444C66] font-semibold">Year</p>
+
+                            <select
+                                class="mt-1 block px-3 h-10 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                                <option value="1">Select a Year</option>
+                                <option value="2">2000</option>
+                                <option value="3">2001</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-[#444C66] font-semibold">Make</p>
+
+                            <select
+                                class="mt-1 block px-3 h-10 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                                <option value="1">Select a Make</option>
+                                <option value="2">2000</option>
+                                <option value="3">2001</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-[#444C66] font-semibold">Model</p>
+
+                            <select
+                                class="mt-1 block px-3 h-10 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                                <option value="1">Select a Model</option>
+                                <option value="2">2000</option>
+                                <option value="3">2001</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="my-14 space-y-4">
+                        <h3 class="text-[#444C66] font-semibold text-2xl">Discount Deals </h3>
+
+                        <div class="flex flex-col">
+                            <label
+                                class="inline-flex items-center mt-3 bg-[#ECFDF5] p-3 hover:scale-110 cursor-pointer rounded">
+                                <input type="radio" name="discount"
+                                    class="h-5 w-5 text-gray-600 accent-[#424242]">
+
+                                <div class="w-full font-bold flex flex-col space-y-1">
+                                    <div class="ml-2 flex justify-between items-center text-sm">
+                                        <p class="text-[#26B07E] text-xs">Recommended</p>
+
+                                        <p class="flex items-center gap-x-2">
+                                            $64.99 USD
+
+                                            <s class="font-semibold text-sm text-[#444C66]">
+                                                $119.80 USD
+                                            </s>
+                                        </p>
+                                    </div>
+
+                                    <div class="ml-2 w-full">
+                                        <p>1 Pair High & Low Beams + Free Canbus Adapters</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <label
+                                class="inline-flex items-center mt-3 p-3 hover:scale-110 cursor-pointer rounded">
+                                <input type="radio" name="discount"
+                                    class="h-5 w-5 text-gray-600 accent-[#424242]">
+                                <div class="ml-2 w-full font-bold flex justify-between text-sm">
+                                    <p>1 Pair & High Beams - 44% off!</p>
+
+                                    <p class="flex gap-x-2">
+                                        $64.99 USD
+                                        <s class="font-semibold text-sm text-[#444C66]">
+                                            $119.80 USD
+                                        </s>
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label
+                                class="inline-flex items-center mt-3 p-3 hover:scale-110 cursor-pointer rounded">
+                                <input type="radio" name="discount"
+                                    class="h-5 w-5 text-gray-600 accent-[#424242]">
+                                <div class="ml-2 w-full font-bold flex justify-between text-sm">
+                                    <p>1 Pair & High Beams - 44% off!</p>
+
+                                    <p class="flex gap-x-2">
+                                        $64.99 USD
+                                        <s class="font-semibold text-sm text-[#444C66]">
+                                            $119.80 USD
+                                        </s>
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <button
+                            class="text-[#424242] border border-[#424242] w-full justify-center items-center px-6 py-4 rounded-lg flex gap-x-2">
+                            Add to cart
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                                        fill="rgba(66,66,66,1)" /></svg>
+                            </span>
+                        </button>
+
+                        <button
+                            class="bg-[#DB3433] w-full justify-center items-center text-white px-6 py-4 rounded-lg flex gap-x-2">
+                            Buy it now
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                        fill="rgba(255,255,255,1)" /></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+
+</html>
