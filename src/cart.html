@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=depvice-width, initial-scale=1.0">
+        <link href="/dist/index.css" rel="stylesheet">
+
+        <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    </head>
+
+    <body x-data="{ showModal: false, grid: true }">
+        <main class="container mx-auto pt-12 pb-20">
+            <section>
+                <table class="bg-white border-collapse w-full text-center">
+                    <tr class="font-bold text-[#444C66] text-2xl">
+                        <td class="border border-[#757A89] px-8 py-4"></td>
+                        <td class="border border-[#757A89] px-8 py-4">Product</td>
+                        <td class="border border-[#757A89] px-8 py-4">Price</td>
+                        <td class="border border-[#757A89] px-8 py-4">Quantity</td>
+                        <td class="border border-[#757A89] px-8 py-4">Subtotal</td>
+                        <td class="border border-[#757A89] px-8 py-4">Remove</td>
+                    </tr>
+    
+                    <tr class="font-semibold text-[#444C66] text-lg">
+                        <td class="border border-[#757A89] px-8 py-4">
+                            <div class="flex justify-center">
+                                <img src="/dist/images/Rectangle 679.svg" alt="">
+                            </div>
+                        </td>
+                        <td class="border border-[#757A89] px-8 py-4">Compact LED Headlights Bulbs</td>
+                        <td class="border border-[#757A89] px-8 py-4">$69.99</td>
+                        <td class="border border-[#757A89] px-8 py-4">
+                            <div class="flex justify-center items-center">
+                                <button class="border border-[#757A89] p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M5 11h14v2H5z" fill="rgba(117,122,137,1)" /></svg>
+                                </button>
+    
+                                <p class="border-y border-[#757A89] px-3 py-0.5">1</p>
+    
+                                <button class="border border-[#757A89] p-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                                            fill="rgba(117,122,137,1)" /></svg>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="border border-[#757A89] px-8 py-4">$69.99</td>
+                        <td class="border border-[#757A89] px-8 py-4">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="6" class="border px-8 py-4 border-[#757A89]">
+                            <div class="flex justify-between">
+                                <div class="flex space-x-2">
+                                    <input class="border py-3 px-6 rounded-lg border-[#BABCC4]"
+                                        type="text" name="" placeholder="Coupon Code">
+    
+                                    <button
+                                        class="uppercase border border-[#424242] px-8 py-3 rounded-lg flex gap-x-2 w-fit text-lg">
+                                        Apply Coupon
+                                    </button>
+                                </div>
+    
+                                <button
+                                    class="bg-[#DB3433] uppercase text-sm text-white px-8 py-3 rounded-lg">
+                                    Update Cart
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="mt-20">
+                <h1 class="text-[#2D2D2D] font-bold text-[32px] mb-6">Cart Total</h1>
+                <table class="bg-white border-collapse w-full mb-4">
+                    <tr class="font-bold text-2xl">
+                        <td class="border border-[#757A89] text-[#444C66] px-8 py-4">Subtotal</td>
+                        <td class="border border-[#757A89] text-[#757A89] px-8 py-4">$129.00</td>
+                    </tr>
+
+                    <tr class="font-bold text-2xl">
+                        <td class="border border-[#757A89] text-[#2D2D2D] px-8 py-4">Total</td>
+                        <td class="border border-[#757A89] text-[#2D2D2D] px-8 py-4">$129.00</td>
+                    </tr>
+                </table>
+
+                <div class="flex w-full justify-end">
+                    <button
+                        class="bg-[#DB3433] uppercase text-sm items-center text-white px-8 py-3 rounded-lg flex gap-x-2">
+                        PROCEED TO CHECKOUT
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                    fill="rgba(255,255,255,1)" /></svg>
+                        </span>
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </body>
+
+</html>
