@@ -9,22 +9,21 @@
     </head>
 
     <body x-data="{ showModal: false, grid: true }">
-        <main class="container mx-auto py-12">
-
-            <section class="flex justify-between py-4">
+        <main class="container mx-auto py-12 px-4">
+            <section class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between py-4">
                 <select
-                    class="mt-1 block w-60 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-fit md:w-60 py-3 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
                     <option value="1">Sort by Category</option>
                     <option value="2">Sort by Type</option>
                 </select>
 
                 <select
-                    class="mt-1 block w-60 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                    class="mt-1 block w-fit md:w-60 py-3 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
                     <option value="1">Filter by Tag</option>
                     <option value="2">Filter by Color</option>
                 </select>
 
-                <input class="border py-3 px-6 rounded-lg border-[#BABCC4]" type="text" name=""
+                <input class="border py-3 w-fit px-6 rounded-lg border-[#BABCC4]" type="text" name=""
                     placeholder="Search">
             </section>
 
