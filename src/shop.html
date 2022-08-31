@@ -48,13 +48,6 @@
                     isNavigation: true,
                     focus: 'center',
                     arrows: false,
-
-                    breakpoints: {
-                        600: {
-                            fixedWidth: 60,
-                            fixedHeight: 44,
-                        },
-                    },
                 });
 
                 main.sync(thumbnails);
@@ -64,10 +57,10 @@
         </script>
     </head>
 
-    <body x-data="{ showModal: false, grid: true }">
-        <main class="container mx-auto py-12 flex space-x-10">
+    <body x-data="{ showModal: false, grid: true, showSidebar: false }">
+        <main class="container mx-auto py-12 flex space-x-3 md:space-x-10">
             <!-- Filter -->
-            <aside class="min-h-screen w-80">
+            <aside x-show="showSidebar" class="min-h-screen w-80">
                 <div class="sticky top-0 flex flex-col items-center px-2 py-4 space-y-10">
                     <input class="border py-3 px-6 rounded-lg border-[#BABCC4]" type="text" name=""
                         placeholder="Search">
@@ -98,8 +91,8 @@
                         <div class="overflow-y-auto flex flex-col h-60">
                             <label class="inline-flex items-center">
                                 <input type="checkbox"
-                                    class="h-5 w-5 text-gray-600 accent-[#424242]"
-                                    checked><span class="ml-2 text-gray-700">Headlight bulbs</span>
+                                    class="h-5 w-5 text-gray-600 accent-[#424242]" checked><span
+                                    class="ml-2 text-gray-700">Headlight bulbs</span>
                             </label>
 
                             <label class="inline-flex items-center mt-3">
@@ -193,7 +186,7 @@
                         </div>
 
                         <div @click="grid = !grid" x-show="grid"
-                            class="w-fit p-2 border cursor-pointer mr-1">
+                            class="w-fit p-2 border cursor-pointer mr-1 hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
@@ -202,7 +195,8 @@
                             </svg>
                         </div>
 
-                        <div x-show="!grid" class="bg-[#2D2D2D] border w-fit p-2 cursor-pointer">
+                        <div x-show="!grid"
+                            class="bg-[#2D2D2D] border w-fit p-2 cursor-pointer hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
@@ -210,17 +204,34 @@
                                     d="M8 4h13v2H8V4zm-5-.5h3v3H3v-3zm0 7h3v3H3v-3zm0 7h3v3H3v-3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z"
                                     fill="rgba(255,255,255,1)" /></svg>
                         </div>
+
+                        <div @click="showSidebar = !showSidebar"
+                            class="bg-[#2D2D2D] mr-1 border w-fit p-2 cursor-pointer">
+                            <svg x-show="!showSidebar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm5 2H4v14h4V5zm2 0v14h10V5H10z"
+                                    fill="rgba(255,255,255,1)" /></svg>
+
+                            <svg x-show="showSidebar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                height="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm6 2v14h11V5H9z"
+                                    fill="rgba(255,255,255,1)" /></svg>
+                        </div>
                     </div>
 
                     <select
-                        class="mt-1 block w-60 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
+                        class="mt-1 block md:w-60 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 text-[#757A89] focus:border-indigo-500 sm:text-sm">
                         <option value="1">Sort by Latest</option>
                         <option value="2">Sort by Oldest</option>
                     </select>
                 </section>
 
                 <section :class="{ 'grid-cols-1': !grid, 'md:grid-cols-3 xl:grid-cols-4': grid }"
-                    class="mt-10 grid gap-x-5 gap-y-6 justify-between">
+                    class="mt-10 grid gap-x-5 gap-y-6 justify-center">
                     <div :class="{ 'flex space-x-10 xl:space-x-16': !grid }"
                         class="rounded-lg w-fit cursor-pointer" @click="showModal = true">
                         <div :class="{ 'min-w-fit': !grid, 'w-fit': grid }"
@@ -1197,10 +1208,10 @@
             <!-- Modal -->
             <div @keydown.escape="showModal = false">
                 <!-- Modal -->
-                <div class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+                <div class="fixed inset-0 z-30 flex md:items-center justify-center overflow-auto bg-black bg-opacity-50"
                     x-show="showModal">
                     <!-- Modal inner -->
-                    <div class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
+                    <div class="h-fit max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg"
                         @click.away="showModal = false"
                         x-transition:enter="motion-safe:ease-out duration-300"
                         x-transition:enter-start="opacity-0 scale-90"
@@ -1218,7 +1229,7 @@
                         </div>
 
                         <!-- content -->
-                        <div class="flex space-x-10">
+                        <div class="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-10">
                             <div>
                                 <section id="main-carousel" class="splide p-9 bg-gray-100">
                                     <div class="splide__track">

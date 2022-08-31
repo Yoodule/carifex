@@ -944,6 +944,10 @@ video {
   width: 66.666667%;
 }
 
+.w-0{
+  width: 0px;
+}
+
 .min-w-fit{
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
@@ -1939,6 +1943,10 @@ video {
 @media (min-width: 768px){
   .md\:absolute{
     position: absolute;
+  }
+
+  .md\:relative{
+    position: relative;
   }
 
   .md\:right-6{
