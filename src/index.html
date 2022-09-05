@@ -123,13 +123,13 @@
 
     <body>
         <header x-data="{ isOpen: false }" class="py-8 px-6 md:px-20 shadow-md">
-            <div class="flex flex-col md:flex-row items-center justify-between container mx-auto">
-                <div class="flex items-center justify-between w-full md:w-fit">
+            <div class="flex flex-col lg:flex-row items-center justify-between container mx-auto">
+                <div class="flex items-center justify-between w-full lg:w-fit">
                     <div>
                         <img src="/dist/images/logo.svg" alt="Carifex" width="150px">
                     </div>
 
-                    <div class="relative z-40 flex gap-x-2 items-center md:hidden">
+                    <div class="relative z-40 flex gap-x-2 md:gap-x-5 items-center lg:hidden">
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
                                 height="24">
@@ -174,16 +174,16 @@
                     </div>
                 </div>
 
-                <div class="w-full md:w-auto" :class="{'mt-10': isOpen}">
-                    <nav class="md:flex md:items-center md:space-x-7 flex-col md:flex-row w-full"
+                <div class="w-full lg:w-auto" :class="{'mt-10': isOpen}">
+                    <nav class="lg:flex lg:items-center lg:space-x-7 flex-col lg:flex-row w-full"
                         :class="{ 'flex shadow-3xl': isOpen, 'hidden': !isOpen }"
                         x-show.transition="true">
                         <a href="./index.html"
-                            class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                            class="w-fit hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
                             Home
                         </a>
 
-                        <div class="flex justify-start md:justify-center">
+                        <div class="flex justify-start lg:justify-center">
                             <div x-data="{
                                 open: false,
                                 toggle() {
@@ -248,11 +248,11 @@
                         </div>
 
                         <a href="./blog.html"
-                            class="hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
+                            class="w-fit hover:border-b-2 border-black cursor-pointer py-2.5 uppercase">
                             Blog
                         </a>
 
-                        <div class="flex justify-start md:justify-center">
+                        <div class="flex justify-start lg:justify-center">
                             <div x-data="{
                                 open: false,
                                 toggle() {
@@ -316,12 +316,12 @@
                             </div>
                         </div>
 
-                        <div class="hidden md:block">
+                        <div class="hidden lg:block">
                             <input class="border py-3 px-6 rounded-lg border-[#BABCC4] w-60"
                                 type="text" name="" placeholder="Search">
                         </div>
 
-                        <div class="hidden md:flex justify-center">
+                        <div class="hidden lg:flex justify-center">
                             <div x-data="{
                                 open: false,
                                 toggle() {
